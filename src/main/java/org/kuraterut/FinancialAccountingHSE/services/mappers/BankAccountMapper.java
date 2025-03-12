@@ -18,12 +18,12 @@ public class BankAccountMapper {
     }
 
     public static BankAccount toEntity(BankAccountDTO bankAccountDTO) {
-        BankAccount bankAccount = new BankAccount();
-        bankAccount.setId(bankAccountDTO.getId());
-        bankAccount.setName(bankAccountDTO.getName());
-        bankAccount.setBalance(bankAccountDTO.getBalance());
+        return new BankAccount.Builder()
+                .setId(bankAccountDTO.getId())
+                .setName(bankAccountDTO.getName())
+                .setBalance(bankAccountDTO.getBalance())
+                .build();
 
-        return bankAccount;
     }
 
 }

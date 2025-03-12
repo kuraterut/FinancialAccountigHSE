@@ -13,6 +13,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @Table(name = "bank_accounts")
+@NoArgsConstructor
 public class BankAccount {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,4 +27,35 @@ public class BankAccount {
 
     @OneToMany(mappedBy = "bankAccount", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Operation> operations;
+
+    private BankAccount(Builder builder) {
+        this.id = builder.id;
+        this.name = builder.name;
+        this.balance = builder.balance;
+    }
+
+    public static class Builder {
+        private Long id;
+        private String name;
+        private double balance;
+
+        public Builder setId(Long id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder setBalance(double balance) {
+            this.balance = balance;
+            return this;
+        }
+
+        public BankAccount build() {
+            return new BankAccount(this);
+        }
+    }
 }
