@@ -68,7 +68,7 @@ public class OperationService {
         if(operation.getOperationType() == OperationType.EXPENSE){
             bankAccountDTO.setBalance(bankAccountDTO.getBalance() - operation.getAmount());
         }
-        else{
+        else if (operation.getOperationType() == OperationType.INCOME){
             bankAccountDTO.setBalance(bankAccountDTO.getBalance() + operation.getAmount());
         }
 
@@ -76,6 +76,7 @@ public class OperationService {
         operationRepository.save(operation);
         return OperationMapper.toDTO(operation);
     }
+
 
     public List<OperationDTO> getAllOperations() {
         List<Operation> operations = operationRepository.findAll();
@@ -186,11 +187,6 @@ public class OperationService {
             operationDTOs.add(OperationMapper.toDTO(operation));
         }
         return operationDTOs;
-    }
-    public void deleteOperationById(Long operationId) {
-        Operation operation = operationRepository.findById(operationId)
-                .orElseThrow(() -> new OperationNotFoundException("Operation not found by ID " + operationId));
-        operationRepository.deleteById(operationId);
     }
 
     public void exportToCsv(String filePath){

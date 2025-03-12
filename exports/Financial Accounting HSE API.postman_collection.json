@@ -1,0 +1,976 @@
+{
+	"info": {
+		"_postman_id": "f6830942-5aba-48db-a078-fe105aab24d7",
+		"name": "Financial Accounting HSE API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41796391"
+	},
+	"item": [
+		{
+			"name": "Bank Account",
+			"item": [
+				{
+					"name": "CSV",
+					"item": [
+						{
+							"name": "CSV Import Bank Accounts",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/kuraterut/Desktop/HSE/MyOwnProjects/JavaProjects/FinancialAccountingHSE/exports/bankAccountExport.csv"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/bank-account/import/csv",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"bank-account",
+										"import",
+										"csv"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CSV Export Bank Accounts",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/bank-account/export/csv?filepath=exports/bankAccountExport.csv",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"bank-account",
+										"export",
+										"csv"
+									],
+									"query": [
+										{
+											"key": "filepath",
+											"value": "exports/bankAccountExport.csv"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "XML",
+					"item": [
+						{
+							"name": "XML Export Bank Account",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/bank-account/export/xml?filepath=exports/bankAccountExport.xml",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"bank-account",
+										"export",
+										"xml"
+									],
+									"query": [
+										{
+											"key": "filepath",
+											"value": "exports/bankAccountExport.xml"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "XML Import Bank Account",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/kuraterut/Desktop/HSE/MyOwnProjects/JavaProjects/FinancialAccountingHSE/exports/bankAccountExport.xml"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/bank-account/import/xml",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"bank-account",
+										"import",
+										"xml"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create Bank Account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"account2\",\r\n    \"balance\" : 90.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/bank-account",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"bank-account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Bank Accounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/bank-account",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"bank-account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Bank Account By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/bank-account/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"bank-account",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Bank Account",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/bank-account/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"bank-account",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Bank Account",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"account1Updated\",\r\n    \"balance\" : 100.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/bank-account/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"bank-account",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "XML",
+					"item": [
+						{
+							"name": "XML Export Category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/category/export/xml?filepath=exports/categoryExport.xml",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"category",
+										"export",
+										"xml"
+									],
+									"query": [
+										{
+											"key": "filepath",
+											"value": "exports/categoryExport.xml"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "XML Import Category",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/kuraterut/Desktop/HSE/MyOwnProjects/JavaProjects/FinancialAccountingHSE/exports/categoryExport.xml"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/category/import/xml",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"category",
+										"import",
+										"xml"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "CSV",
+					"item": [
+						{
+							"name": "CSV Export Category",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/category/export/csv?filepath=exports/categoryExport.csv",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"category",
+										"export",
+										"csv"
+									],
+									"query": [
+										{
+											"key": "filepath",
+											"value": "exports/categoryExport.csv"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CSV Import Category",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/kuraterut/Desktop/HSE/MyOwnProjects/JavaProjects/FinancialAccountingHSE/exports/categoryExport.csv"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/category/import/csv",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"category",
+										"import",
+										"csv"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryType\" : \"EXPENSE\",\r\n    \"name\" : \"Кафе\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/category",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/category",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/category/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"category",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category By ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/category/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category By ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/category/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"category",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Categories By Type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/category/type?categoryType=INCOME",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"category",
+								"type"
+							],
+							"query": [
+								{
+									"key": "categoryType",
+									"value": "INCOME"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Operation",
+			"item": [
+				{
+					"name": "CSV",
+					"item": [
+						{
+							"name": "CSV Export Operation",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/operation/export/csv?filepath=exports/operationExport.csv",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"operation",
+										"export",
+										"csv"
+									],
+									"query": [
+										{
+											"key": "filepath",
+											"value": "exports/operationExport.csv"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CSV Import Operation",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/kuraterut/Desktop/HSE/MyOwnProjects/JavaProjects/FinancialAccountingHSE/exports/operationExport.csv"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/operation/import/csv",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"operation",
+										"import",
+										"csv"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "XML",
+					"item": [
+						{
+							"name": "XML Export Operation",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/operation/export/xml?filepath=exports/operationExport.xml",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"operation",
+										"export",
+										"xml"
+									],
+									"query": [
+										{
+											"key": "filepath",
+											"value": "exports/operationExport.xml"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "XML Import Operation",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/kuraterut/Desktop/HSE/MyOwnProjects/JavaProjects/FinancialAccountingHSE/exports/operationExport.xml"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/operation/import/xml",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"operation",
+										"import",
+										"xml"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create Operation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"operationType\" : \"INCOME\",\r\n    \"bankAccountId\" : 1,\r\n    \"amount\" : 100.0,\r\n    \"dateTime\" : \"2025-03-11T23:35:00\",\r\n    \"description\" : \"test operation\",\r\n    \"categoryId\" : 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/operation",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"operation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Operations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/operation",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"operation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Operation By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/operation/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"operation",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Operations By Bank Account ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/operation/bank-account?bankAccountId=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"operation",
+								"bank-account"
+							],
+							"query": [
+								{
+									"key": "bankAccountId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Operations By Category ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/operation/category?categoryId=2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"operation",
+								"category"
+							],
+							"query": [
+								{
+									"key": "categoryId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Operations By Type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/operation/type?operationType=INCOME",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"operation",
+								"type"
+							],
+							"query": [
+								{
+									"key": "operationType",
+									"value": "INCOME"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Operations By Date Time Equal",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/operation/date-time/equal?dateTime=2025-03-11T23:35:00",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"operation",
+								"date-time",
+								"equal"
+							],
+							"query": [
+								{
+									"key": "dateTime",
+									"value": "2025-03-11T23:35:00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Operations By Date Time Before",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/operation/date-time/before?dateTime=2025-03-12T23:35:00",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"operation",
+								"date-time",
+								"before"
+							],
+							"query": [
+								{
+									"key": "dateTime",
+									"value": "2025-03-12T23:35:00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Operations By Date Time After",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/operation/date-time/after?dateTime=2025-03-10T23:35:00",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"operation",
+								"date-time",
+								"after"
+							],
+							"query": [
+								{
+									"key": "dateTime",
+									"value": "2025-03-10T23:35:00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Operations By Date Time Between",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/operation/date-time/between?start=2025-03-10T23:35:00&end=2025-03-12T23:35:00",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"operation",
+								"date-time",
+								"between"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "2025-03-10T23:35:00"
+								},
+								{
+									"key": "end",
+									"value": "2025-03-12T23:35:00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Operations By Amount Equal",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/operation/amount/equal?amount=100.0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"operation",
+								"amount",
+								"equal"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "100.0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Operations By Amount Greater",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/operation/amount/greater?amount=90.0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"operation",
+								"amount",
+								"greater"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "90.0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Operations By Amount Less",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/operation/amount/less?amount=101.0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"operation",
+								"amount",
+								"less"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "101.0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Operations By Amount Between",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/operation/amount/between?start=90.0&end=101.0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"operation",
+								"amount",
+								"between"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "90.0"
+								},
+								{
+									"key": "end",
+									"value": "101.0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "localhost:8080/api",
+			"type": "string"
+		}
+	]
+}

@@ -1,0 +1,1199 @@
+2025-03-12T02:40:27.347+03:00  WARN 18996 --- [TaskManagementSystemAPI] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h1m59s635ms675µs400ns).
+2025-03-12T13:00:29.081+03:00  WARN 18996 --- [TaskManagementSystemAPI] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10h20m13s978ms469µs900ns).
+2025-03-12T13:06:27.441+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0
+2025-03-12T13:06:27.449+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name 
+    from
+        bank_accounts ba1_0 
+    where
+        ba1_0.id=?
+2025-03-12T13:06:27.457+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-03-12T13:06:47.903+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name,
+        o1_0.category_id,
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    join
+        bank_accounts ba1_0 
+            on ba1_0.id=o1_0.bank_account_id 
+    join
+        categories c1_0 
+            on c1_0.id=o1_0.category_id 
+    where
+        o1_0.id=?
+2025-03-12T13:07:41.152+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    left join
+        bank_accounts ba1_0 
+            on ba1_0.id=o1_0.bank_account_id 
+    where
+        ba1_0.id=?
+2025-03-12T13:07:41.156+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name 
+    from
+        bank_accounts ba1_0 
+    where
+        ba1_0.id=?
+2025-03-12T13:07:41.160+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-03-12T13:07:46.181+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    left join
+        bank_accounts ba1_0 
+            on ba1_0.id=o1_0.bank_account_id 
+    where
+        ba1_0.id=?
+2025-03-12T13:07:50.143+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    left join
+        bank_accounts ba1_0 
+            on ba1_0.id=o1_0.bank_account_id 
+    where
+        ba1_0.id=?
+2025-03-12T13:07:50.143+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name 
+    from
+        bank_accounts ba1_0 
+    where
+        ba1_0.id=?
+2025-03-12T13:07:50.147+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-03-12T13:08:24.887+03:00  WARN 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'categoryId' for method parameter type Long is not present]
+2025-03-12T13:08:36.999+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    left join
+        categories c1_0 
+            on c1_0.id=o1_0.category_id 
+    where
+        c1_0.id=?
+2025-03-12T13:08:37.003+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name 
+    from
+        bank_accounts ba1_0 
+    where
+        ba1_0.id=?
+2025-03-12T13:08:37.003+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-03-12T13:08:41.161+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    left join
+        categories c1_0 
+            on c1_0.id=o1_0.category_id 
+    where
+        c1_0.id=?
+2025-03-12T13:08:45.894+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    left join
+        categories c1_0 
+            on c1_0.id=o1_0.category_id 
+    where
+        c1_0.id=?
+2025-03-12T13:08:45.898+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name 
+    from
+        bank_accounts ba1_0 
+    where
+        ba1_0.id=?
+2025-03-12T13:08:45.898+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-03-12T13:10:59.000+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    where
+        o1_0.operation_type=?
+2025-03-12T13:10:59.008+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name 
+    from
+        bank_accounts ba1_0 
+    where
+        ba1_0.id=?
+2025-03-12T13:10:59.012+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-03-12T13:11:06.018+03:00  WARN 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Method parameter 'operationType': Failed to convert value of type 'java.lang.String' to required type 'org.kuraterut.FinancialAccountingHSE.utils.OperationType'; Failed to convert from type [java.lang.String] to type [@org.springframework.web.bind.annotation.RequestParam org.kuraterut.FinancialAccountingHSE.utils.OperationType] for value [INCOMEs]]
+2025-03-12T13:11:49.325+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    where
+        o1_0.operation_type=?
+2025-03-12T13:11:49.325+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name 
+    from
+        bank_accounts ba1_0 
+    where
+        ba1_0.id=?
+2025-03-12T13:11:49.330+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-03-12T13:15:07.004+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0
+2025-03-12T13:15:07.008+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name 
+    from
+        bank_accounts ba1_0 
+    where
+        ba1_0.id=?
+2025-03-12T13:15:07.008+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-03-12T13:15:27.452+03:00  WARN 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/operation/date-time/equals.]
+2025-03-12T13:16:27.968+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    where
+        o1_0.date_time=?
+2025-03-12T13:16:27.972+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name 
+    from
+        bank_accounts ba1_0 
+    where
+        ba1_0.id=?
+2025-03-12T13:16:27.972+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-03-12T13:18:25.928+03:00  WARN 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'dateTime' for method parameter type LocalDateTime is not present]
+2025-03-12T13:18:57.335+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    where
+        o1_0.date_time<=?
+2025-03-12T13:18:57.335+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name 
+    from
+        bank_accounts ba1_0 
+    where
+        ba1_0.id=?
+2025-03-12T13:18:57.339+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-03-12T13:19:03.015+03:00  WARN 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Method parameter 'dateTime': Failed to convert value of type 'java.lang.String' to required type 'java.time.LocalDateTime'; Failed to convert from type [java.lang.String] to type [@org.springframework.web.bind.annotation.RequestParam java.time.LocalDateTime] for value [2025-03-12]]
+2025-03-12T13:19:32.388+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    where
+        o1_0.date_time<=?
+2025-03-12T13:19:32.390+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name 
+    from
+        bank_accounts ba1_0 
+    where
+        ba1_0.id=?
+2025-03-12T13:19:32.394+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-03-12T13:20:14.503+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    where
+        o1_0.date_time>=?
+2025-03-12T13:20:14.503+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name 
+    from
+        bank_accounts ba1_0 
+    where
+        ba1_0.id=?
+2025-03-12T13:20:14.507+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-03-12T13:20:20.221+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    where
+        o1_0.date_time>=?
+2025-03-12T13:20:26.060+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    where
+        o1_0.date_time>=?
+2025-03-12T13:20:26.060+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name 
+    from
+        bank_accounts ba1_0 
+    where
+        ba1_0.id=?
+2025-03-12T13:20:26.064+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-03-12T13:23:44.469+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    where
+        o1_0.date_time<=? 
+        and o1_0.date_time>=?
+2025-03-12T13:23:44.473+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name 
+    from
+        bank_accounts ba1_0 
+    where
+        ba1_0.id=?
+2025-03-12T13:23:44.473+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-03-12T13:25:20.858+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0
+2025-03-12T13:25:20.862+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name 
+    from
+        bank_accounts ba1_0 
+    where
+        ba1_0.id=?
+2025-03-12T13:25:20.862+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-03-12T13:25:50.340+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    where
+        o1_0.amount=?
+2025-03-12T13:25:50.340+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name 
+    from
+        bank_accounts ba1_0 
+    where
+        ba1_0.id=?
+2025-03-12T13:25:50.340+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-03-12T13:25:57.155+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    where
+        o1_0.amount=?
+2025-03-12T13:26:02.913+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    where
+        o1_0.amount=?
+2025-03-12T13:26:02.913+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name 
+    from
+        bank_accounts ba1_0 
+    where
+        ba1_0.id=?
+2025-03-12T13:26:02.917+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-03-12T13:26:26.754+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    where
+        o1_0.amount>=?
+2025-03-12T13:26:26.758+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name 
+    from
+        bank_accounts ba1_0 
+    where
+        ba1_0.id=?
+2025-03-12T13:26:26.758+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-03-12T13:26:31.489+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    where
+        o1_0.amount>=?
+2025-03-12T13:26:38.116+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    where
+        o1_0.amount>=?
+2025-03-12T13:26:38.116+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name 
+    from
+        bank_accounts ba1_0 
+    where
+        ba1_0.id=?
+2025-03-12T13:26:38.120+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-03-12T13:27:31.761+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    where
+        o1_0.amount<=?
+2025-03-12T13:27:39.767+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    where
+        o1_0.amount<=?
+2025-03-12T13:27:39.769+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name 
+    from
+        bank_accounts ba1_0 
+    where
+        ba1_0.id=?
+2025-03-12T13:27:39.770+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-03-12T13:28:35.776+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    where
+        o1_0.amount<=? 
+        and o1_0.amount>=?
+2025-03-12T13:28:35.780+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name 
+    from
+        bank_accounts ba1_0 
+    where
+        ba1_0.id=?
+2025-03-12T13:28:35.780+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-03-12T13:30:16.447+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name,
+        o1_0.category_id,
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    join
+        bank_accounts ba1_0 
+            on ba1_0.id=o1_0.bank_account_id 
+    join
+        categories c1_0 
+            on c1_0.id=o1_0.category_id 
+    where
+        o1_0.id=?
+2025-03-12T13:30:16.459+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        o1_0.bank_account_id,
+        o1_0.id,
+        o1_0.amount,
+        o1_0.category_id,
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    left join
+        categories c1_0 
+            on c1_0.id=o1_0.category_id 
+    where
+        o1_0.bank_account_id=?
+2025-03-12T13:30:16.479+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    update
+        bank_accounts 
+    set
+        balance=?,
+        name=? 
+    where
+        id=?
+2025-03-12T13:30:16.487+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    delete 
+    from
+        operations 
+    where
+        id=?
+2025-03-12T13:30:16.499+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name,
+        o1_0.category_id,
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    join
+        bank_accounts ba1_0 
+            on ba1_0.id=o1_0.bank_account_id 
+    join
+        categories c1_0 
+            on c1_0.id=o1_0.category_id 
+    where
+        o1_0.id=?
+2025-03-12T13:30:16.513+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name,
+        o1_0.category_id,
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    join
+        bank_accounts ba1_0 
+            on ba1_0.id=o1_0.bank_account_id 
+    join
+        categories c1_0 
+            on c1_0.id=o1_0.category_id 
+    where
+        o1_0.id=?
+2025-03-12T13:30:16.529+03:00  WARN 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.orm.ObjectOptimisticLockingFailureException: Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect): [org.kuraterut.FinancialAccountingHSE.models.entities.Operation#1]]
+2025-03-12T13:30:58.846+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name,
+        o1_0.category_id,
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    join
+        bank_accounts ba1_0 
+            on ba1_0.id=o1_0.bank_account_id 
+    join
+        categories c1_0 
+            on c1_0.id=o1_0.category_id 
+    where
+        o1_0.id=?
+2025-03-12T13:30:58.854+03:00  WARN 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.kuraterut.FinancialAccountingHSE.handlers.exceptions.operation.OperationNotFoundException: Operation not found]
+2025-03-12T13:31:09.298+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0
+2025-03-12T13:31:22.356+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name 
+    from
+        bank_accounts ba1_0 
+    where
+        ba1_0.id=?
+2025-03-12T13:31:22.365+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-03-12T13:31:22.373+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        o1_0.bank_account_id,
+        o1_0.id,
+        o1_0.amount,
+        o1_0.category_id,
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    left join
+        categories c1_0 
+            on c1_0.id=o1_0.category_id 
+    where
+        o1_0.bank_account_id=?
+2025-03-12T13:31:22.377+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    update
+        bank_accounts 
+    set
+        balance=?,
+        name=? 
+    where
+        id=?
+2025-03-12T13:31:22.389+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    insert 
+    into
+        operations
+        (amount, bank_account_id, category_id, date_time, description, operation_type) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2025-03-12T13:31:39.768+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name,
+        o1_0.category_id,
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    join
+        bank_accounts ba1_0 
+            on ba1_0.id=o1_0.bank_account_id 
+    join
+        categories c1_0 
+            on c1_0.id=o1_0.category_id 
+    where
+        o1_0.id=?
+2025-03-12T13:31:39.776+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        o1_0.bank_account_id,
+        o1_0.id,
+        o1_0.amount,
+        o1_0.category_id,
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    left join
+        categories c1_0 
+            on c1_0.id=o1_0.category_id 
+    where
+        o1_0.bank_account_id=?
+2025-03-12T13:31:39.780+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    update
+        bank_accounts 
+    set
+        balance=?,
+        name=? 
+    where
+        id=?
+2025-03-12T13:31:39.780+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    delete 
+    from
+        operations 
+    where
+        id=?
+2025-03-12T13:31:39.793+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name,
+        o1_0.category_id,
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    join
+        bank_accounts ba1_0 
+            on ba1_0.id=o1_0.bank_account_id 
+    join
+        categories c1_0 
+            on c1_0.id=o1_0.category_id 
+    where
+        o1_0.id=?
+2025-03-12T13:31:39.797+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name,
+        o1_0.category_id,
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    join
+        bank_accounts ba1_0 
+            on ba1_0.id=o1_0.bank_account_id 
+    join
+        categories c1_0 
+            on c1_0.id=o1_0.category_id 
+    where
+        o1_0.id=?
+2025-03-12T13:31:39.802+03:00  WARN 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.orm.ObjectOptimisticLockingFailureException: Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect): [org.kuraterut.FinancialAccountingHSE.models.entities.Operation#2]]
+2025-03-12T13:36:45.730+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0
+2025-03-12T13:36:54.719+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name 
+    from
+        bank_accounts ba1_0 
+    where
+        ba1_0.id=?
+2025-03-12T13:36:54.722+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-03-12T13:36:54.725+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        o1_0.bank_account_id,
+        o1_0.id,
+        o1_0.amount,
+        o1_0.category_id,
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    left join
+        categories c1_0 
+            on c1_0.id=o1_0.category_id 
+    where
+        o1_0.bank_account_id=?
+2025-03-12T13:36:54.727+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    update
+        bank_accounts 
+    set
+        balance=?,
+        name=? 
+    where
+        id=?
+2025-03-12T13:36:54.875+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    insert 
+    into
+        operations
+        (amount, bank_account_id, category_id, date_time, description, operation_type) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2025-03-12T13:36:58.394+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        o1_0.category_id,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0
+2025-03-12T13:36:58.398+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name 
+    from
+        bank_accounts ba1_0 
+    where
+        ba1_0.id=?
+2025-03-12T13:36:58.398+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name 
+    from
+        categories c1_0 
+    where
+        c1_0.id=?
+2025-03-12T13:37:02.815+03:00 DEBUG 18996 --- [TaskManagementSystemAPI] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.amount,
+        o1_0.bank_account_id,
+        ba1_0.id,
+        ba1_0.balance,
+        ba1_0.name,
+        o1_0.category_id,
+        c1_0.id,
+        c1_0.category_type,
+        c1_0.name,
+        o1_0.date_time,
+        o1_0.description,
+        o1_0.operation_type 
+    from
+        operations o1_0 
+    join
+        bank_accounts ba1_0 
+            on ba1_0.id=o1_0.bank_account_id 
+    join
+        categories c1_0 
+            on c1_0.id=o1_0.category_id 
+    where
+        o1_0.id=?

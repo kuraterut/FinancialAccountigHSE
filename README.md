@@ -54,7 +54,7 @@ Financial Accounting System for HSE API
     Клонируйте репозиторий:
 
     git clone https://github.com/kuraterut/FinancialAccountigHSE.git
-    cd TaskManagementSystemAPI
+    cd FinancialAccountigHSE
 
     Соберите проект:
 
@@ -64,105 +64,104 @@ Financial Accounting System for HSE API
 
     docker-compose up --build
 
-    Проверка:
-
-        Откройте браузер и перейдите по адресу http://localhost:8080.
-
-        Используйте Swagger UI для тестирования API: http://localhost:8080/swagger-ui/index.html.
-
+    
 Использование API
 
 API предоставляет следующие endpoints:
-Авторизация (Auth)
 
-    POST /api/auth/login — LogIn по email и паролю и получение токена.
+Банковские счета (Bank Account)
 
-    POST /api/auth/register — Регистрация нового пользователя.
-
-Далее все эндпоинты будут делится на две категории
-```/api/admin - Доступно только пользователям с ролью ROLE_ADMIN```
-и
-```/api/user - Доступно только пользователям с ролью ROLE_USER```,
-Доступ проверяется через JWT-токен
-
-Задачи (Tasks)
-
-    GET /api/admin/tasks — получить список задач.
-
-    GET /api/admin/tasks/{id} — получить задачу по ID.
-
-    POST /api/admin/tasks — создать новую задачу.
-
-    PUT /api/admin/tasks/{id} — обновить задачу.
-
-    DELETE /api/admin/tasks/{id} — удалить задачу.
-
-    GET /api/admin/tasks/executor?executorId={executorId} — получить задачи по ID исполнителя
-
-    GET /api/admin/tasks/author?authorId={authorId} — получить задачи по ID автора
+    POST /api/bank-account — создать новый счет.
     
-    GET /api/admin/tasks/status?status={status} — получить задачи по статусу
+    GET /api/bank-account — получить список счетов.
 
-    GET /api/admin/tasks/priority?priority={priority} — получить задачи по приоритету
+    GET /api/bank-account/{id} — получить счет по ID.
 
-    PUT /api/admin/tasks/{taskId}/executor?executorId={executorId} — добавить исполнителя к задаче
+    PUT /api/bank-account/{id} — обновить счет по ID.
 
-    DELETE /api/admin/tasks/{taskId}/executor?executorId={executorId} — Открепить исполнителя от задачи
+    DELETE /api/bank-account/{id} — удалить счет по ID.
+
+    POST /api/bank-account/export/csv — экспортировать в .csv информацию о счетах в базе.
+
+    GET /api/bank-account/import/csv — импортировать из .csv информацию о счетах в базу. 
+
+    POST /api/bank-account/export/xml — экспортировать в .xml информацию о счетах в базе.
+
+    GET /api/bank-account/import/xml — импортировать из .xml информацию о счетах в базу. 
+
+Категории (Category)
+
+    POST /api/category — создать новую категорию.
     
-    PUT /api/user/tasks/{taskId}/status?status={status} — Обновление статуса
+    GET /api/category — получить список категорий.
 
-    GET /api/user/tasks — получить список задач, где user является исполнителем.
+    GET /api/category/{id} — получить категорию по ID.
 
-    GET /api/user/tasks/{taskId} — получить информацию о задаче(Проверяются права доступа).
+    GET /api/category/type — получить категорию по типу категории.
 
-Комментарии (Comments)
+    PUT /api/category/{id} — обновить категорию по ID.
 
-    GET /api/admin/comments — получить список комментариев.
+    DELETE /api/category/{id} — удалить категорию по ID.
 
-    GET /api/admin/comments/{id} — получить комментарий по ID.
+    POST /api/category/export/csv — экспортировать в .csv информацию о категориях в базе.
 
-    POST /api/admin/comments — создать новый комментарий.
+    GET /api/category/import/csv — импортировать из .csv информацию о категориях в базу. 
 
-    PUT /api/admin/comments/{id} — обновить комментарий.
+    POST /api/category/export/xml — экспортировать в .xml информацию о категориях в базе.
 
-    DELETE /api/admin/comments/{id} — удалить комментарий.
-
-    GET /api/admin/comments/author?authorId={authorId} — получить список комментариев по id автора.
-
-    GET /api/admin/comments/task?taskId={taskId} — получить список комментариев по id задачи.
-
-    POST /api/user/comments — создать новый комментарий.
-
-    GET /api/user/comments — получить список комментариев, где user - автор.
-
-    GET /api/user/comments/{id} — получить комментарий по ID(Проверка доступа).
-
-    PUT /api/user/comments/{id} — обновить комментарий(Проверка доступа).
-
-    DELETE /api/suer/comments/{id} — удалить комментарий(Проверка доступа).
-
-Пользователи (Users):
-
-    GET /api/admin/users - получить всех пользователей(email и роль).
-
-    GET /api/admin/users/{userId} - получить информацию о пользователе по ID.
-
-    GET /api/admin/users/email?email={email} - получить информацию о пользователе по Email.
+    GET /api/category/import/xml — импортировать из .xml информацию о категориях в базу. 
 
 
-Подробную документацию можно найти в Swagger UI: http://localhost:8080/swagger-ui/index.html.
+Операции (Operation):
+
+    POST /api/operation — создать новую операцию.
+    
+    GET /api/operation — получить список операций.
+
+    GET /api/operation/{id} — получить операцию по ID.
+
+    GET /api/operation/type — получить операцию по типу операции.
+
+    GET /api/operation/category — получить операцию по ID категории.
+    
+    GET /api/operation/bank-account — получить операцию по ID банковского счета.
+
+    GET /api/operation/bank-account — получить операцию по ID банковского счета.
+
+    GET /api/operation/date-time/equal — получить список операций по конкретной дате и времени.
+
+    GET /api/operation/date-time/before — получить список операций до конкретной даты и времени.
+
+    GET /api/operation/date-time/after — получить список операций после конкретной даты и времени.
+
+    GET /api/operation/date-time/between — получить список операций между конкретными датами и временем.
+
+    GET /api/operation/amount/equal — получить список операций по конкретной сумме.
+
+    GET /api/operation/amount/greater — получить список операций >= конкретной суммы.
+
+    GET /api/operation/amount/less — получить список операций <= конкретной суммы.
+
+    GET /api/operation/amount/between — получить список операций между конкретными суммами.
+
+    POST /api/operation/export/csv — экспортировать в .csv информацию о операциях в базе.
+
+    GET /api/operation/import/csv — импортировать из .csv информацию о операциях в базу. 
+
+    POST /api/operation/export/xml — экспортировать в .xml информацию о операциях в базе.
+
+    GET /api/operation/import/xml — импортировать из .xml информацию о операциях в базу. 
+
+По пути ```exports/``` можно найти json файл для импорта в Postman и протестировать все эндпоинты
+
 Настройка
+
 Настройка базы данных
 
     Для локального запуска настройте подключение к PostgreSQL в application.properties.
 
     Для Docker Compose настройки базы данных задаются в docker-compose.yml.
 
-Логирование
-
-    Логи сохраняются в директорию logs (локально) или /app/logs (в Docker).
-
-    Настройки логирования можно изменить в logback-spring.xml.
 
 Технологии
 
@@ -174,6 +173,4 @@ API предоставляет следующие endpoints:
 
     Docker — контейнеризация приложения.
 
-    Swagger и OpenAPI — документация API.
-
-    Logback — логирование.
+Пояснения:

@@ -106,13 +106,6 @@ public class OperationController {
         return ResponseEntity.ok(operationDTOs);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteOperationById(@PathVariable Long id) {
-        operationService.deleteOperationById(id);
-        return ResponseEntity.noContent().build();
-    }
-
-
     @GetMapping("/export/csv")
     public ResponseEntity<String> exportCsv(@RequestParam String filepath) {
         operationService.exportToCsv(filepath);
